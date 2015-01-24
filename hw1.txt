@@ -1,0 +1,31 @@
+
+Question 1: Course Policies
+
+	Part (a)
+		1. Looking up information relevant to the course online
+		3. Talking to my classmates about the problems
+		5. Asking the course staff for help
+
+	Part (b)
+		2. emacs 
+		3. vim
+		7. sublime
+
+	Part (c)
+		3. Each student can use up to 2 of their 4 grace days on a single assignment
+
+	Part (d)
+		4. Create an issue in your Github issue tracker and assign it to the listed CP/TA
+
+
+Question 2: Git
+
+	Part (a)
+		3. Terminal (Mac or Linux)
+
+	Part (b)
+		1. git add hw1q2b.cpp
+		2. git log
+
+	Part (c)
+		Answer: Git will commit the files that have been pushed.
