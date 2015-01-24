@@ -2,7 +2,7 @@
 General Notes:
 
 	Q1-2 are in hw1.txt
-	Q3 is not included as it is to just review
+	Q3 asked us to review (no written answers/coding)
 	Q4 is in the perm.cpp file
 	Q5 is in the lists.cpp file
 
