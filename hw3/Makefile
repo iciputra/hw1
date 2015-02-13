@@ -3,10 +3,6 @@ CC       = g++
 CPPFLAGS = -Wall -g
 BIN_DIR  = bin
 
-
-all: $(BIN_DIR)/LListInt
-	./$(BIN_DIR)/LListInt
-
 GTEST_LL = -I /usr/local/opt/gtest/include/ -l gtest -l gtest_main -pthread
 
 $(BIN_DIR)/LListInt: unitTest.cpp llistint.h $(BIN_DIR)/.dirstamp
@@ -14,7 +10,7 @@ $(BIN_DIR)/LListInt: unitTest.cpp llistint.h $(BIN_DIR)/.dirstamp
 
 .PHONY: copytest
 
-tests: $(BIN_DIR)/LListInt
+copytest: $(BIN_DIR)/LListInt
 	-@$(BIN_DIR)/LListInt
 	-@echo "--- All Tested!---"
 
