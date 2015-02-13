@@ -71,10 +71,9 @@ class SetInt {
 
  private:
   LListInt list_;
-
-  /**
-   * Declare other members here
-   */
+  LListint::Item* ptr_f;
+  LListint::Item* ptr_n;
+  int increment;
 
 };
 

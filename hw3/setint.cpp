@@ -38,13 +38,26 @@
   }
 
   int const* SetInt::first(){
-    //creates a pointer to first item
-
+    ptr_f = NULL;
+    ptr_n = NULL;
+    increment = 0;
+    if (empty() == false){
+      ptr_f = list_.get(0);
+      ptr_n = list_.get(0);
+    }
+    return ptr_f;
   }
 
   int const* SetInt::next(){
-    //moves the pointer created above to next item 
-    //(or is it second pointer that moves?)
+    int i = increment + 1;
+    if (i < size()){
+      ptr_n = list_get(i);
+      return ptr_n;
+    }
+    else {
+      ptr_n = NULL;
+      return ptr_n;
+    }
   }
 
   /**
