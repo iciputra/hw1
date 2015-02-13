@@ -1,4 +1,8 @@
-  SetInt::SetInt(){}
+  SetInt::SetInt(){
+    ptr_f = NULL;
+    ptr_n = NULL;
+    increment = 0;
+  }
 
   SetInt::~SetInt(){} //check llistint.cpp
 
@@ -38,9 +42,6 @@
   }
 
   int const* SetInt::first(){
-    ptr_f = NULL;
-    ptr_n = NULL;
-    increment = 0;
     if (empty() == false){
       ptr_f = list_.get(0);
       ptr_n = list_.get(0);
@@ -60,20 +61,85 @@
     }
   }
 
-  /**
-   * Returns another (new) set that contains
-   * the union of this set and "other"
-   */
-  SetInt setUnion(const SetInt& other) const;
+SetInt::SetInt(const SetInt& other){ //copy constructor
+    ptr_f = NULL;
+    ptr_n = NULL;
+    increment = 0;
+    if (other.empty() == false){
+      int value = other.first();
+      this->insert(value);
+      for (int i = 1; i < other.size(); i++){
+        int value = other.first();
+        this->insert(value);
+      }
+    }
+}
+
+  SetInt setUnion(const SetInt& other) const{
+    LListint l3(list_);
+
+    if (other.empty() == false){
+      int value = other.first();
+      l3.insert(value);
+      for (int i = 1; i < other.size(); i++){
+        int value = other.first();
+        l3.insert(value);
+      }
+    }
+    return *l3;
+  }
 
   /**
    * Returns another (new) set that contains
    * the intersection of this set and "other"
    */
-  SetInt setIntersection(const SetInt& other) const;
+  SetInt setIntersection(const SetInt& other) const{
+    List l3;
+    int value;
+    int secVal;
+    if (list_.empty() == false){
+      value = list_.first();
+      if (other.exists() == value){
+        l3.insert(value);
+      }
+      for (int i = 1; i < list_.size(); i++){
+        value = list_.next();
+        if (other.exists() == value){
+          l3.insert(value);
+        }
+      }
+    return *l3;
+  }
 
-  SetInt operator|(const SetInt& other) const;
+  SetInt operator|(const SetInt& other) const{
+    LListint l3(list_);
 
-  SetInt operator&(const SetInt& other) const;
+    if (other.empty() == false){
+      int value = other.first();
+      l3.insert(value);
+      for (int i = 1; i < other.size(); i++){
+        int value = other.first();
+        l3.insert(value);
+      }
+    }
+    return *l3;
+  }
 
+  SetInt operator&(const SetInt& other) const{
+    List l3;
+    int value;
+    int secVal;
+    if (list_.empty() == false){
+      value = list_.first();
+      if (other.exists() == value){
+        l3.insert(value);
+      }
+      for (int i = 1; i < list_.size(); i++){
+        value = list_.next();
+        if (other.exists() == value){
+          l3.insert(value);
+        }
+      }
+    return *l3;
+  }
 
