@@ -11,8 +11,8 @@ $(BIN_DIR)/LListInt: unitTest.cpp llistint.h $(BIN_DIR)/.dirstamp
 $(BIN_DIR)/SetTest: settest.cpp setint.h llistint.h $(BIN_DIR)/.dirstamp
 	$(CC) $(CPPFLAGS) llistint.cpp setint.cpp settest.cpp $(GTEST_LL) -o $@
 
-$(BIN_DIR)/MAPS: maps.cpp llistint.h $(BIN_DIR)/.dirstamp
-	$(CC) $(CPPFLAGS) llistint.cpp maps.cpp -o $@
+$(BIN_DIR)/PGIndex: pgindex.cpp llistint.h $(BIN_DIR)/.dirstamp
+	$(CC) $(CPPFLAGS) llistint.cpp pgindex.cpp -o $@
 
 .PHONY: copytest settest pgindex 
 
@@ -24,9 +24,11 @@ settest: $(BIN_DIR)/SetTest
 	-@$(BIN_DIR)/SetTest
 	-@echo "--- All Tested!---"
 
-pgindex: $(BIN_DIR)/MAPS 
-	-@$(BIN_DIR)/MAPS
+pgindex: $(BIN_DIR)/PgIndex
 
+
+clean:
+	rm -rf $(BIN_DIR)
 
 $(BIN_DIR)/.dirstamp:
 	mkdir -p $(BIN_DIR)

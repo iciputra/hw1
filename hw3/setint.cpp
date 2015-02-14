@@ -7,7 +7,9 @@
     increment = 0;
   }
 
-  SetInt::~SetInt(){} //check llistint.cpp
+  SetInt::~SetInt(){
+    list_.~LListInt();
+  }
 
   int SetInt::size() const{
      return this->list_.size();
