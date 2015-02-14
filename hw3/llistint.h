@@ -4,7 +4,7 @@
 class LListInt {
  public:
   struct Item {
-    double val;
+    int val;
     Item *prev;
     Item *next;
   };
@@ -47,12 +47,12 @@ class LListInt {
   /**
    * Returns the value at index, pos
    */
-  double& get(int pos);
+  int& get(int pos);
 
   /**
    * Returns the value at index, pos
    */
-  double const & get(int pos) const;
+  int const & get(int pos) const;
 
   /**
    * Deletes all items in the list

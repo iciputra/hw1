@@ -104,13 +104,13 @@ void LListInt::set(int loc, const double& val)
   temp->val = val;
 }
 
-double& LListInt::get(int loc)
+int& LListInt::get(int loc)
 {
   Item *temp = getNodeAt(loc);
   return temp->val;
 }
 
-double const & LListInt::get(int loc) const
+int const & LListInt::get(int loc) const
 {
   Item *temp = getNodeAt(loc);
   return temp->val;

@@ -71,8 +71,8 @@ class SetInt {
 
  private:
   LListInt list_;
-  LListint::Item* ptr_f;
-  LListint::Item* ptr_n;
+  const int* ptr_f;
+  const int* ptr_n;
   int increment;
 
 };
